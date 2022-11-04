@@ -1,0 +1,15 @@
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\SportsClubSystem.exe.config
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\SportsClubSystem.exe
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\SportsClubSystem.pdb
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.csproj.AssemblyReference.cache
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.Properties.Resources.resources
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.csproj.GenerateResource.cache
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.csproj.CoreCompileInputs.cache
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.exe
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.pdb
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.Main_menu.resources
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.Sub_menu.resources
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_search.resources
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_registration.resources
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_fix.resources
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_delete.resources
