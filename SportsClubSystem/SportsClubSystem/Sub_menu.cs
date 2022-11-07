@@ -16,9 +16,10 @@ namespace SportsClubSystem
         {
             InitializeComponent();
         }
-        private void button5_Click(object sender, EventArgs e)
+
+        private void button10_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

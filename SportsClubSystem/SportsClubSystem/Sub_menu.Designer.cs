@@ -29,12 +29,69 @@ namespace SportsClubSystem
         /// </summary>
         private void InitializeComponent()
         {
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(182, 52);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(163, 69);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "検索画面";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(417, 52);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(168, 69);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "登録画面";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(182, 162);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(163, 73);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "修正画面";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(417, 162);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(168, 73);
+            this.button9.TabIndex = 3;
+            this.button9.Text = "削除画面";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(285, 271);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(157, 60);
+            this.button10.TabIndex = 4;
+            this.button10.Text = "戻る";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Sub_menu
             // 
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Name = "Sub_menu";
+            this.Text = "サブメニュー";
             this.ResumeLayout(false);
 
         }
@@ -46,5 +103,10 @@ namespace SportsClubSystem
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
