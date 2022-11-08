@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class member_search
+    partial class Member_search
     {
         /// <summary>
         /// Required designer variable.
@@ -69,8 +69,9 @@ namespace SportsClubSystem
             this.button2.TabIndex = 3;
             this.button2.Text = "戻る";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form3
+            // Member_search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,7 +80,7 @@ namespace SportsClubSystem
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "Form3";
+            this.Name = "Member_search";
             this.Text = "会員検索画面";
             this.ResumeLayout(false);
             this.PerformLayout();

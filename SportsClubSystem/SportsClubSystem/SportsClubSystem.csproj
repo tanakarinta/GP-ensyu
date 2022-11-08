@@ -58,29 +58,29 @@
     <Compile Include="Sub_menu.Designer.cs">
       <DependentUpon>Sub_menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="member_search.cs">
+    <Compile Include="Member_search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="member_search.Designer.cs">
-      <DependentUpon>member_search.cs</DependentUpon>
+    <Compile Include="Member_search.Designer.cs">
+      <DependentUpon>Member_search.cs</DependentUpon>
     </Compile>
-    <Compile Include="member_registration.cs">
+    <Compile Include="Member_registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="member_registration.Designer.cs">
-      <DependentUpon>member_registration.cs</DependentUpon>
+    <Compile Include="Member_registration.Designer.cs">
+      <DependentUpon>Member_registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="member_fix.cs">
+    <Compile Include="Member_fix.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="member_fix.Designer.cs">
-      <DependentUpon>member_fix.cs</DependentUpon>
+    <Compile Include="Member_fix.Designer.cs">
+      <DependentUpon>Member_fix.cs</DependentUpon>
     </Compile>
-    <Compile Include="member_delete.cs">
+    <Compile Include="Member_delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="member_delete.Designer.cs">
-      <DependentUpon>member_delete.cs</DependentUpon>
+    <Compile Include="Member_delete.Designer.cs">
+      <DependentUpon>Member_delete.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,17 +90,17 @@
     <EmbeddedResource Include="Sub_menu.resx">
       <DependentUpon>Sub_menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="member_search.resx">
-      <DependentUpon>member_search.cs</DependentUpon>
+    <EmbeddedResource Include="Member_search.resx">
+      <DependentUpon>Member_search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="member_registration.resx">
-      <DependentUpon>member_registration.cs</DependentUpon>
+    <EmbeddedResource Include="Member_registration.resx">
+      <DependentUpon>Member_registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="member_fix.resx">
-      <DependentUpon>member_fix.cs</DependentUpon>
+    <EmbeddedResource Include="Member_fix.resx">
+      <DependentUpon>Member_fix.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="member_delete.resx">
-      <DependentUpon>member_delete.cs</DependentUpon>
+    <EmbeddedResource Include="Member_delete.resx">
+      <DependentUpon>Member_delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class member_fix
+    partial class Member_fix
     {
         /// <summary>
         /// Required designer variable.
@@ -103,6 +103,7 @@ namespace SportsClubSystem
             this.button2.TabIndex = 12;
             this.button2.Text = "戻る";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -135,7 +136,7 @@ namespace SportsClubSystem
             this.textBox4.Size = new System.Drawing.Size(333, 22);
             this.textBox4.TabIndex = 8;
             // 
-            // Form5
+            // Member_fix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +152,7 @@ namespace SportsClubSystem
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "Form5";
+            this.Name = "Member_fix";
             this.Text = "会員修正画面";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,7 +12,6 @@ namespace SportsClubSystem
 {
     public partial class Main_menu : Form
     {
-        Sub_menu sub = new Sub_menu();
         public Main_menu()
         {
             InitializeComponent();
@@ -20,7 +19,16 @@ namespace SportsClubSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sub.Show();
+            //会員登録管理ボタン
+            Sub_menu sub = new Sub_menu();
+            sub.Show();//サブメニューに移動
+            this.Visible = false;//この画面を非表示
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //終了ボタン
+            Application.Exit();//終了
         }
     }
 }

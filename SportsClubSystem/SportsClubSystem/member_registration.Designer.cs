@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class member_registration
+    partial class Member_registration
     {
         /// <summary>
         /// Required designer variable.
@@ -78,6 +78,7 @@ namespace SportsClubSystem
             this.button2.TabIndex = 4;
             this.button2.Text = "戻る";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -106,7 +107,7 @@ namespace SportsClubSystem
             this.label3.TabIndex = 7;
             this.label3.Text = "電話番号";
             // 
-            // member_registration
+            // Member_registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +120,7 @@ namespace SportsClubSystem
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Name = "member_registration";
+            this.Name = "Member_registration";
             this.Text = "会員登録画面";
             this.ResumeLayout(false);
             this.PerformLayout();

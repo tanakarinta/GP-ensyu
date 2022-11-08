@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class member_delete
+    partial class Member_delete
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@ namespace SportsClubSystem
             this.button2.TabIndex = 12;
             this.button2.Text = "戻る";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -70,7 +71,7 @@ namespace SportsClubSystem
             this.textBox4.Size = new System.Drawing.Size(291, 22);
             this.textBox4.TabIndex = 16;
             // 
-            // Form6
+            // Member_delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,7 +80,7 @@ namespace SportsClubSystem
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form6";
+            this.Name = "Member_delete";
             this.Text = "会員削除画面";
             this.ResumeLayout(false);
             this.PerformLayout();

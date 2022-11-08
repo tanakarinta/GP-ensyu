@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace SportsClubSystem
 {
-    public partial class member_delete : Form
+    public partial class Member_delete : Form
     {
-        public member_delete()
+        public Member_delete()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //戻るボタン
+            this.Close();//この画面を閉じる
+            Sub_menu sub = new Sub_menu();
+            sub.Visible = true;//サブメニュー画面を表示
         }
     }
 }
