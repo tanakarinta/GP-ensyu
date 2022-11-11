@@ -13,3 +13,4 @@ C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_registration.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_fix.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_delete.resources
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.Exit_pop.resources
