@@ -16,7 +16,7 @@ namespace SportsClubSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_menu());
+            Application.Run(new S_member());
         }
     }
 }

@@ -24,5 +24,11 @@ namespace SportsClubSystem
             Sub_menu sub = new Sub_menu();
             sub.Visible = true;//サブメニュー画面を表示
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string tex = textBox1.Text;
+            label2.Text = tex;
+        }
     }
 }
