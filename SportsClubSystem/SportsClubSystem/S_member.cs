@@ -33,5 +33,28 @@ namespace SportsClubSystem
                 con.Close();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using(SQLiteConnection con=new SQLiteConnection("Data Source=member.db"))
+            {
+                con.Open();
+                using (SQLiteTransaction trans = con.BeginTransaction())
+                {
+                    SQLiteCommand cmd = con.CreateCommand();
+                    //インサート
+                    cmd.CommandText = "INSERT INTO t_product (productname, price) VALUES (@Product, @Price)";
+                    //パラメータセット
+                    cmd.Parameters.Add("Product", System.Data.DbType.String);
+                    cmd.Parameters.Add("Price", System.Data.DbType.Int64);
+                    //データ追加
+                    cmd.Parameters["Product"].Value = textBox1.Text;
+                    cmd.Parameters["Price"].Value = int.Parse(textBox2.Text);
+                    cmd.ExecuteNonQuery();
+                    //コミット
+                    trans.Commit();
+                }
+            }
+        }
     }
 }
