@@ -28,6 +28,7 @@ namespace SportsClubSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //データ追加
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
             {
                 con.Open();
@@ -35,13 +36,15 @@ namespace SportsClubSystem
                 {
                     SQLiteCommand cmd = con.CreateCommand();
                     //インサート
-                    cmd.CommandText = "INSERT INTO t_product (productname, price) VALUES (@Product, @Price)";
+                    cmd.CommandText = "INSERT INTO t_product (member_name, member_address, member_phone_number) VALUES (@Name, @Address, @Number)";
                     //パラメータセット
-                    cmd.Parameters.Add("Product", System.Data.DbType.String);
-                    cmd.Parameters.Add("Price", System.Data.DbType.Int64);
+                    cmd.Parameters.Add("Name", DbType.String);
+                    cmd.Parameters.Add("Address", DbType.String);
+                    cmd.Parameters.Add("Number", DbType.String);
                     //データ追加
-                    cmd.Parameters["Product"].Value = textBox1.Text;
-                    cmd.Parameters["Price"].Value = int.Parse(textBox2.Text);
+                    cmd.Parameters["Name"].Value = textBox1.Text;
+                    cmd.Parameters["Address"].Value = textBox3.Text;
+                    cmd.Parameters["Number"].Value = textBox2.Text;
                     cmd.ExecuteNonQuery();
                     //コミット
                     trans.Commit();

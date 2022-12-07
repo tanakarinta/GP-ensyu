@@ -29,7 +29,6 @@ namespace SportsClubSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,19 +41,10 @@ namespace SportsClubSystem
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(356, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 24);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "検索";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(250, 30);
+            this.label1.Location = new System.Drawing.Point(250, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 15);
             this.label1.TabIndex = 4;
@@ -63,7 +53,7 @@ namespace SportsClubSystem
             // textBox1
             // 
             this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox1.Location = new System.Drawing.Point(253, 48);
+            this.textBox1.Location = new System.Drawing.Point(253, 84);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(291, 22);
             this.textBox1.TabIndex = 3;
@@ -113,6 +103,7 @@ namespace SportsClubSystem
             this.button3.TabIndex = 11;
             this.button3.Text = "修正";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox3
             // 
@@ -149,7 +140,6 @@ namespace SportsClubSystem
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "Member_fix";
@@ -160,8 +150,6 @@ namespace SportsClubSystem
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
