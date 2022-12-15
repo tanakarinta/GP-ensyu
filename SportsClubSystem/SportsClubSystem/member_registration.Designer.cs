@@ -29,57 +29,57 @@ namespace SportsClubSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.numberBox = new System.Windows.Forms.TextBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
+            this.registButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // nameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(229, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(333, 22);
-            this.textBox1.TabIndex = 0;
+            this.nameBox.Location = new System.Drawing.Point(229, 129);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(333, 22);
+            this.nameBox.TabIndex = 0;
             // 
-            // textBox2
+            // numberBox
             // 
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox2.Location = new System.Drawing.Point(229, 241);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(333, 22);
-            this.textBox2.TabIndex = 1;
+            this.numberBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.numberBox.Location = new System.Drawing.Point(229, 241);
+            this.numberBox.Name = "numberBox";
+            this.numberBox.Size = new System.Drawing.Size(333, 22);
+            this.numberBox.TabIndex = 2;
             // 
-            // textBox3
+            // addressBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(229, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(333, 22);
-            this.textBox3.TabIndex = 2;
+            this.addressBox.Location = new System.Drawing.Point(229, 185);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(333, 22);
+            this.addressBox.TabIndex = 1;
             // 
-            // button1
+            // registButton
             // 
-            this.button1.Location = new System.Drawing.Point(350, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 24);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "登録";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.registButton.Location = new System.Drawing.Point(350, 278);
+            this.registButton.Name = "registButton";
+            this.registButton.Size = new System.Drawing.Size(81, 24);
+            this.registButton.TabIndex = 3;
+            this.registButton.Text = "登録";
+            this.registButton.UseVisualStyleBackColor = true;
+            this.registButton.Click += new System.EventHandler(this.registButton_Click);
             // 
-            // button2
+            // backButton
             // 
-            this.button2.Location = new System.Drawing.Point(350, 349);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 24);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "戻る";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.backButton.Location = new System.Drawing.Point(350, 349);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(81, 24);
+            this.backButton.TabIndex = 4;
+            this.backButton.Text = "戻る";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // label1
             // 
@@ -116,11 +116,11 @@ namespace SportsClubSystem
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.registButton);
+            this.Controls.Add(this.addressBox);
+            this.Controls.Add(this.numberBox);
+            this.Controls.Add(this.nameBox);
             this.Name = "Member_registration";
             this.Text = "会員登録画面";
             this.ResumeLayout(false);
@@ -130,11 +130,11 @@ namespace SportsClubSystem
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.TextBox numberBox;
+        private System.Windows.Forms.TextBox addressBox;
+        private System.Windows.Forms.Button registButton;
+        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

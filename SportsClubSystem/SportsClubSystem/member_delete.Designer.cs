@@ -40,7 +40,7 @@ namespace SportsClubSystem
             this.button2.Location = new System.Drawing.Point(356, 289);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 24);
-            this.button2.TabIndex = 12;
+            this.button2.TabIndex = 3;
             this.button2.Text = "戻る";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -50,7 +50,7 @@ namespace SportsClubSystem
             this.button1.Location = new System.Drawing.Point(356, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 24);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 2;
             this.button1.Text = "削除";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -70,7 +70,7 @@ namespace SportsClubSystem
             this.textBox4.Location = new System.Drawing.Point(253, 168);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(291, 22);
-            this.textBox4.TabIndex = 16;
+            this.textBox4.TabIndex = 1;
             // 
             // Member_delete
             // 

@@ -27,8 +27,6 @@ namespace SportsClubSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Exit_pop exit = new Exit_pop();
-            //exit.ShowDialog();//終了確認ポップアップを表示
             DialogResult result = MessageBox.Show("終了してもよろしいですか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)//OKボタンを押したら
             {

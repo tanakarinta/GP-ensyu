@@ -65,13 +65,22 @@ namespace SportsClubSystem
                 }
                 else
                 {
-                    //DataTableを生成
-                    var dataTabel = new DataTable();
-                    //会員番号と検索番号が同じ行を表示
-                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE t_product.member_id LIKE " + serchId, con);
+                    //数字なら
+                    if (serchId.All(char.IsDigit))
+                    {
+                        //DataTableを生成
+                        var dataTabel = new DataTable();
+                        //会員番号と検索番号が同じ行を表示
+                        var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE t_product.member_id LIKE " + serchId, con);
 
-                    adapter.Fill(dataTabel);
-                    dataGridView1.DataSource = dataTabel;
+                        adapter.Fill(dataTabel);
+                        dataGridView1.DataSource = dataTabel;
+                    }
+                    else
+                    {
+                        //数字じゃなければエラーメッセージ
+                        DialogResult result = MessageBox.Show("数字以外は入力出来ません。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

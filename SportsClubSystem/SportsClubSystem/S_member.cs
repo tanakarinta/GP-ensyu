@@ -144,7 +144,7 @@ namespace SportsClubSystem
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //データ表示
+             //データ表示
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
             {
                 //検索番号を格納
@@ -177,5 +177,26 @@ namespace SportsClubSystem
             Sub_menu sub = new Sub_menu();
             sub.Visible = true;//サブメニュー画面を表示
         }
+
+        //private void button9_Click(object sender, EventArgs e)
+        //{
+        //    using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+        //    {
+        //        con.Open();
+        //        using (SQLiteTransaction trans = con.BeginTransaction())
+        //        {
+        //            SQLiteCommand cmd = con.CreateCommand();
+        //            //インサート
+        //            cmd.CommandText = "SELECT * FROM t_product WHERE t_product.member_id LIKE 1";
+        //            string sql = cmd;
+        //            DialogResult result = MessageBox.Show(cmd, "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //}
     }
 }
+//using (SQLiteCommand command = con.CreateCommand())
+//{
+//    string sql = command.CommandText = "SELECT * FROM t_product WHERE t_product.member_id LIKE 1";
+//    DialogResult result = MessageBox.Show(sql, "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//}

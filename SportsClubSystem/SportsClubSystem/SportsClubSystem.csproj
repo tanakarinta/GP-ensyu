@@ -84,11 +84,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exit_pop.cs">
+    <Compile Include="Registration_check.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exit_pop.Designer.cs">
-      <DependentUpon>Exit_pop.cs</DependentUpon>
+    <Compile Include="Registration_check.Designer.cs">
+      <DependentUpon>Registration_check.cs</DependentUpon>
     </Compile>
     <Compile Include="S_member.cs">
       <SubType>Form</SubType>
@@ -134,8 +134,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Exit_pop.resx">
-      <DependentUpon>Exit_pop.cs</DependentUpon>
+    <EmbeddedResource Include="Registration_check.resx">
+      <DependentUpon>Registration_check.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_menu.resx">
       <DependentUpon>Main_menu.cs</DependentUpon>

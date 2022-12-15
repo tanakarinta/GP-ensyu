@@ -10,24 +10,16 @@ using System.Windows.Forms;
 
 namespace SportsClubSystem
 {
-    public partial class Exit_pop : Form
+    public partial class Registration_check : Form
     {
-        public Exit_pop()
+        public Registration_check()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //はいボタン
-            Application.Exit();//終了
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            //いいえボタン
-            Main_menu main = new Main_menu();
-            this.Close();//この画面を閉じる
+            this.Close();
         }
     }
 }

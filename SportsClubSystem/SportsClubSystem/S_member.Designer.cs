@@ -58,6 +58,7 @@ namespace SportsClubSystem
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -321,11 +322,21 @@ namespace SportsClubSystem
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(173, 174);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(135, 98);
+            this.button9.TabIndex = 29;
+            this.button9.Text = "ダイアログ";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // S_member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -394,5 +405,6 @@ namespace SportsClubSystem
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }

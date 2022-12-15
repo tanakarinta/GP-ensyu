@@ -13,7 +13,6 @@ C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_registration.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_fix.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.member_delete.resources
-C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.Exit_pop.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\EntityFramework.dll
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\System.Data.SQLite.dll
@@ -24,3 +23,4 @@ C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\System.Data.SQLite.xml
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.S_member.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.csproj.CopyComplete
+C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.Registration_check.resources

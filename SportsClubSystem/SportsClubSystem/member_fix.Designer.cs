@@ -30,15 +30,16 @@ namespace SportsClubSystem
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.buckButton = new System.Windows.Forms.Button();
+            this.fixButton = new System.Windows.Forms.Button();
+            this.addressBox = new System.Windows.Forms.TextBox();
+            this.numberBox = new System.Windows.Forms.TextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,18 +51,18 @@ namespace SportsClubSystem
             this.label1.TabIndex = 4;
             this.label1.Text = "会員番号を入力";
             // 
-            // textBox1
+            // idBox
             // 
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox1.Location = new System.Drawing.Point(253, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 22);
-            this.textBox1.TabIndex = 3;
+            this.idBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.idBox.Location = new System.Drawing.Point(253, 84);
+            this.idBox.Name = "idBox";
+            this.idBox.Size = new System.Drawing.Size(291, 22);
+            this.idBox.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(232, 239);
+            this.label3.Location = new System.Drawing.Point(231, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 15;
@@ -70,7 +71,7 @@ namespace SportsClubSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(232, 183);
+            this.label2.Location = new System.Drawing.Point(231, 216);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 14;
@@ -79,69 +80,79 @@ namespace SportsClubSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 127);
+            this.label4.Location = new System.Drawing.Point(231, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 13;
             this.label4.Text = "氏名";
             // 
-            // button2
+            // buckButton
             // 
-            this.button2.Location = new System.Drawing.Point(356, 365);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 24);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "戻る";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buckButton.Location = new System.Drawing.Point(355, 398);
+            this.buckButton.Name = "buckButton";
+            this.buckButton.Size = new System.Drawing.Size(81, 24);
+            this.buckButton.TabIndex = 6;
+            this.buckButton.Text = "戻る";
+            this.buckButton.UseVisualStyleBackColor = true;
+            this.buckButton.Click += new System.EventHandler(this.buckButton_Click);
             // 
-            // button3
+            // fixButton
             // 
-            this.button3.Location = new System.Drawing.Point(356, 309);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 24);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "修正";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.fixButton.Location = new System.Drawing.Point(355, 342);
+            this.fixButton.Name = "fixButton";
+            this.fixButton.Size = new System.Drawing.Size(81, 24);
+            this.fixButton.TabIndex = 5;
+            this.fixButton.Text = "修正";
+            this.fixButton.UseVisualStyleBackColor = true;
+            this.fixButton.Click += new System.EventHandler(this.fixButton_Click);
             // 
-            // textBox3
+            // addressBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(235, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(333, 22);
-            this.textBox3.TabIndex = 10;
+            this.addressBox.Location = new System.Drawing.Point(234, 234);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(333, 22);
+            this.addressBox.TabIndex = 3;
             // 
-            // textBox2
+            // numberBox
             // 
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox2.Location = new System.Drawing.Point(235, 257);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(333, 22);
-            this.textBox2.TabIndex = 9;
+            this.numberBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.numberBox.Location = new System.Drawing.Point(234, 290);
+            this.numberBox.Name = "numberBox";
+            this.numberBox.Size = new System.Drawing.Size(333, 22);
+            this.numberBox.TabIndex = 4;
             // 
-            // textBox4
+            // nameBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(235, 145);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(333, 22);
-            this.textBox4.TabIndex = 8;
+            this.nameBox.Location = new System.Drawing.Point(234, 178);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(333, 22);
+            this.nameBox.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(274, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(254, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "修正したい箇所にデータを入力してください";
             // 
             // Member_fix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.buckButton);
+            this.Controls.Add(this.fixButton);
+            this.Controls.Add(this.addressBox);
+            this.Controls.Add(this.numberBox);
+            this.Controls.Add(this.nameBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.idBox);
             this.Name = "Member_fix";
             this.Text = "会員修正画面";
             this.ResumeLayout(false);
@@ -151,14 +162,15 @@ namespace SportsClubSystem
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button buckButton;
+        private System.Windows.Forms.Button fixButton;
+        private System.Windows.Forms.TextBox addressBox;
+        private System.Windows.Forms.TextBox numberBox;
+        private System.Windows.Forms.TextBox nameBox;
+        private System.Windows.Forms.Label label5;
     }
 }
