@@ -29,31 +29,31 @@ namespace SportsClubSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.deleteBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button2
+            // backButton
             // 
-            this.button2.Location = new System.Drawing.Point(356, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 24);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "戻る";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.backButton.Location = new System.Drawing.Point(356, 289);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(81, 24);
+            this.backButton.TabIndex = 3;
+            this.backButton.Text = "戻る";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // button1
+            // deleteButton
             // 
-            this.button1.Location = new System.Drawing.Point(356, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 24);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "削除";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.deleteButton.Location = new System.Drawing.Point(356, 228);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(81, 24);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "削除";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // label4
             // 
@@ -64,13 +64,13 @@ namespace SportsClubSystem
             this.label4.TabIndex = 17;
             this.label4.Text = "会員番号を入力";
             // 
-            // textBox4
+            // deleteBox
             // 
-            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox4.Location = new System.Drawing.Point(253, 168);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(291, 22);
-            this.textBox4.TabIndex = 1;
+            this.deleteBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.deleteBox.Location = new System.Drawing.Point(253, 168);
+            this.deleteBox.Name = "deleteBox";
+            this.deleteBox.Size = new System.Drawing.Size(291, 22);
+            this.deleteBox.TabIndex = 1;
             // 
             // Member_delete
             // 
@@ -78,9 +78,9 @@ namespace SportsClubSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deleteBox);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.deleteButton);
             this.Name = "Member_delete";
             this.Text = "会員削除画面";
             this.ResumeLayout(false);
@@ -89,9 +89,9 @@ namespace SportsClubSystem
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox deleteBox;
     }
 }

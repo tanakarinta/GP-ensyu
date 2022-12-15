@@ -34,7 +34,7 @@ namespace SportsClubSystem
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.buckButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.fixButton = new System.Windows.Forms.Button();
             this.addressBox = new System.Windows.Forms.TextBox();
             this.numberBox = new System.Windows.Forms.TextBox();
@@ -86,15 +86,15 @@ namespace SportsClubSystem
             this.label4.TabIndex = 13;
             this.label4.Text = "氏名";
             // 
-            // buckButton
+            // backButton
             // 
-            this.buckButton.Location = new System.Drawing.Point(355, 398);
-            this.buckButton.Name = "buckButton";
-            this.buckButton.Size = new System.Drawing.Size(81, 24);
-            this.buckButton.TabIndex = 6;
-            this.buckButton.Text = "戻る";
-            this.buckButton.UseVisualStyleBackColor = true;
-            this.buckButton.Click += new System.EventHandler(this.buckButton_Click);
+            this.backButton.Location = new System.Drawing.Point(355, 398);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(81, 24);
+            this.backButton.TabIndex = 6;
+            this.backButton.Text = "戻る";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // fixButton
             // 
@@ -146,7 +146,7 @@ namespace SportsClubSystem
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.buckButton);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.fixButton);
             this.Controls.Add(this.addressBox);
             this.Controls.Add(this.numberBox);
@@ -166,7 +166,7 @@ namespace SportsClubSystem
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buckButton;
+        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button fixButton;
         private System.Windows.Forms.TextBox addressBox;
         private System.Windows.Forms.TextBox numberBox;

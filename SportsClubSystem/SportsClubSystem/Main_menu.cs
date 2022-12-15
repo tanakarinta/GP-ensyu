@@ -17,7 +17,7 @@ namespace SportsClubSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void subMenuButton_Click(object sender, EventArgs e)
         {
             //会員登録管理ボタン
             Sub_menu sub = new Sub_menu();
@@ -25,7 +25,7 @@ namespace SportsClubSystem
             this.Visible = false;//この画面を非表示
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("終了してもよろしいですか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)//OKボタンを押したら

@@ -18,7 +18,7 @@ namespace SportsClubSystem
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             //戻るボタン
             this.Close();//この画面を閉じる
@@ -26,7 +26,7 @@ namespace SportsClubSystem
             sub.Visible = true;//サブメニュー画面を表示
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("削除してもよろしいですか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)//OKボタンを押したら
@@ -43,7 +43,7 @@ namespace SportsClubSystem
                         //パラメータセット
                         cmd.Parameters.Add("Id", DbType.Int64);
                         //データ削除
-                        cmd.Parameters["Id"].Value = int.Parse(textBox4.Text);
+                        cmd.Parameters["Id"].Value = int.Parse(deleteBox.Text);
                         cmd.ExecuteNonQuery();
                         //コミット
                         trans.Commit();

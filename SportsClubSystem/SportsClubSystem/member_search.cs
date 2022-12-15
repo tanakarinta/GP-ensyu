@@ -30,15 +30,15 @@ namespace SportsClubSystem
                 var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
 
                 adapter.Fill(dataTabel);
-                dataGridView1.DataSource = dataTabel;
-                dataGridView1.Columns[0].HeaderText = "会員番号";
-                dataGridView1.Columns[1].HeaderText = "氏名";
-                dataGridView1.Columns[2].HeaderText = "住所";
-                dataGridView1.Columns[3].HeaderText = "電話番号";
+                dataGridView_s.DataSource = dataTabel;
+                dataGridView_s.Columns[0].HeaderText = "会員番号";
+                dataGridView_s.Columns[1].HeaderText = "氏名";
+                dataGridView_s.Columns[2].HeaderText = "住所";
+                dataGridView_s.Columns[3].HeaderText = "電話番号";
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             //戻るボタン
             this.Close();//この画面を閉じる
@@ -46,13 +46,13 @@ namespace SportsClubSystem
             sub.Visible = true;//サブメニュー画面を表示
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
             //データ表示
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
             {
                 //検索番号を格納
-                string serchId = textBox1.Text;
+                string serchId = searchBox.Text;
                 if (serchId == "")
                 {
                     //DataTableを生成
@@ -61,7 +61,7 @@ namespace SportsClubSystem
                     var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
 
                     adapter.Fill(dataTabel);
-                    dataGridView1.DataSource = dataTabel;
+                    dataGridView_s.DataSource = dataTabel;
                 }
                 else
                 {
@@ -74,7 +74,7 @@ namespace SportsClubSystem
                         var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE t_product.member_id LIKE " + serchId, con);
 
                         adapter.Fill(dataTabel);
-                        dataGridView1.DataSource = dataTabel;
+                        dataGridView_s.DataSource = dataTabel;
                     }
                     else
                     {

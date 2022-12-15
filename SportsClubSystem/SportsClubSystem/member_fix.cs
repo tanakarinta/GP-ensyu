@@ -18,7 +18,7 @@ namespace SportsClubSystem
             InitializeComponent();
         }
 
-        private void buckButton_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             //戻るボタン
             this.Close();//この画面を閉じる
