@@ -29,71 +29,71 @@ namespace SportsClubSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.registButton = new System.Windows.Forms.Button();
+            this.fixButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button6
+            // searchButton
             // 
-            this.button6.Location = new System.Drawing.Point(90, 52);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(163, 69);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "検索画面";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.searchButton.Location = new System.Drawing.Point(90, 52);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(163, 69);
+            this.searchButton.TabIndex = 0;
+            this.searchButton.Text = "検索画面";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // button7
+            // registButton
             // 
-            this.button7.Location = new System.Drawing.Point(336, 52);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(168, 69);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "登録画面";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.registButton.Location = new System.Drawing.Point(336, 52);
+            this.registButton.Name = "registButton";
+            this.registButton.Size = new System.Drawing.Size(168, 69);
+            this.registButton.TabIndex = 1;
+            this.registButton.Text = "登録画面";
+            this.registButton.UseVisualStyleBackColor = true;
+            this.registButton.Click += new System.EventHandler(this.registButton_Click);
             // 
-            // button8
+            // fixButton
             // 
-            this.button8.Location = new System.Drawing.Point(90, 144);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(163, 73);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "修正画面";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.fixButton.Location = new System.Drawing.Point(90, 144);
+            this.fixButton.Name = "fixButton";
+            this.fixButton.Size = new System.Drawing.Size(163, 73);
+            this.fixButton.TabIndex = 2;
+            this.fixButton.Text = "修正画面";
+            this.fixButton.UseVisualStyleBackColor = true;
+            this.fixButton.Click += new System.EventHandler(this.fixButton_Click);
             // 
-            // button9
+            // deleteButton
             // 
-            this.button9.Location = new System.Drawing.Point(336, 144);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(168, 73);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "削除画面";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.deleteButton.Location = new System.Drawing.Point(336, 144);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(168, 73);
+            this.deleteButton.TabIndex = 3;
+            this.deleteButton.Text = "削除画面";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // button10
+            // backButton
             // 
-            this.button10.Location = new System.Drawing.Point(220, 250);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(157, 60);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "戻る";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.backButton.Location = new System.Drawing.Point(220, 250);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(157, 60);
+            this.backButton.TabIndex = 4;
+            this.backButton.Text = "戻る";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // Sub_menu
             // 
             this.ClientSize = new System.Drawing.Size(600, 360);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.fixButton);
+            this.Controls.Add(this.registButton);
+            this.Controls.Add(this.searchButton);
             this.Name = "Sub_menu";
             this.Text = "サブメニュー";
             this.ResumeLayout(false);
@@ -107,10 +107,10 @@ namespace SportsClubSystem
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button registButton;
+        private System.Windows.Forms.Button fixButton;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button backButton;
     }
 }

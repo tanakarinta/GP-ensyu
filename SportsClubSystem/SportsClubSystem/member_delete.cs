@@ -16,6 +16,7 @@ namespace SportsClubSystem
         public Member_delete()
         {
             InitializeComponent();
+            ControlBox = false;
         }
 
         private void backButton_Click(object sender, EventArgs e)

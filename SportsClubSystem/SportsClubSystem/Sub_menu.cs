@@ -17,7 +17,7 @@ namespace SportsClubSystem
             InitializeComponent();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             //戻るボタン
             this.Close();//この画面を閉じる
@@ -25,7 +25,7 @@ namespace SportsClubSystem
             main.Visible = true;//メインメニュー画面を表示
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
             //検索ボタン
             Member_search search = new Member_search();
@@ -33,7 +33,7 @@ namespace SportsClubSystem
             this.Visible = false;//この画面を非表示
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void registButton_Click(object sender, EventArgs e)
         {
             //登録ボタン
             Member_registration registration = new Member_registration();
@@ -41,7 +41,7 @@ namespace SportsClubSystem
             this.Visible = false;//この画面を非表示
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void fixButton_Click(object sender, EventArgs e)
         {
             //修正ボタン
             Member_fix fix = new Member_fix();
@@ -49,8 +49,9 @@ namespace SportsClubSystem
             this.Visible = false;//この画面を非表示
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
+            //削除ボタン
             Member_delete delete = new Member_delete();
             delete.Show();//会員削除画面へ移動
             this.Visible = false;//この画面を非表示

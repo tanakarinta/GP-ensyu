@@ -17,6 +17,7 @@ namespace SportsClubSystem
         {
             InitializeComponent();
             this.Load += Member_search_load;
+            ControlBox = false;
         }
 
         private void Member_search_load(object sender, EventArgs e)
