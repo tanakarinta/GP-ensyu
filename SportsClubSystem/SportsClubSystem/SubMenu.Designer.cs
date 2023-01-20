@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class Sub_menu
+    partial class SubMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@ namespace SportsClubSystem
             this.searchButton.TabIndex = 0;
             this.searchButton.Text = "検索画面";
             this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
             // 
             // registButton
             // 
@@ -54,7 +54,7 @@ namespace SportsClubSystem
             this.registButton.TabIndex = 1;
             this.registButton.Text = "登録画面";
             this.registButton.UseVisualStyleBackColor = true;
-            this.registButton.Click += new System.EventHandler(this.registButton_Click);
+            this.registButton.Click += new System.EventHandler(this.registButtonClick);
             // 
             // fixButton
             // 
@@ -64,7 +64,7 @@ namespace SportsClubSystem
             this.fixButton.TabIndex = 2;
             this.fixButton.Text = "修正画面";
             this.fixButton.UseVisualStyleBackColor = true;
-            this.fixButton.Click += new System.EventHandler(this.fixButton_Click);
+            this.fixButton.Click += new System.EventHandler(this.fixButtonClick);
             // 
             // deleteButton
             // 
@@ -74,7 +74,7 @@ namespace SportsClubSystem
             this.deleteButton.TabIndex = 3;
             this.deleteButton.Text = "削除画面";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.deleteButtonClick);
             // 
             // backButton
             // 
@@ -84,7 +84,7 @@ namespace SportsClubSystem
             this.backButton.TabIndex = 4;
             this.backButton.Text = "戻る";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Click += new System.EventHandler(this.backButtonClick);
             // 
             // Sub_menu
             // 
@@ -101,12 +101,6 @@ namespace SportsClubSystem
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button registButton;
         private System.Windows.Forms.Button fixButton;

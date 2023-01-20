@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class Member_search
+    partial class MemberSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,7 @@ namespace SportsClubSystem
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "検索";
             this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
             // 
             // backButton
             // 
@@ -75,7 +75,7 @@ namespace SportsClubSystem
             this.backButton.TabIndex = 3;
             this.backButton.Text = "戻る";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Click += new System.EventHandler(this.backButtonClick);
             // 
             // dataGridView_s
             // 

@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class Main_menu
+    partial class MainMenu
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -41,7 +41,7 @@ namespace SportsClubSystem
             this.subMenuButton.TabIndex = 0;
             this.subMenuButton.Text = "会員登録管理";
             this.subMenuButton.UseVisualStyleBackColor = true;
-            this.subMenuButton.Click += new System.EventHandler(this.subMenuButton_Click);
+            this.subMenuButton.Click += new System.EventHandler(this.subMenuButtonClick);
             // 
             // exitButton
             // 
@@ -51,7 +51,7 @@ namespace SportsClubSystem
             this.exitButton.TabIndex = 1;
             this.exitButton.Text = "終了";
             this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.exitButton.Click += new System.EventHandler(this.exitButtonClick);
             // 
             // Main_menu
             // 

@@ -1,26 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
+//会員情報検索画面
 namespace SportsClubSystem
 {
-    public partial class Member_search : Form
+    public partial class MemberSearch : Form
     {
-        public Member_search()
+        /// <summary>
+        /// Loadの設定
+        /// </summary>
+        public MemberSearch()
         {
             InitializeComponent();
-            this.Load += Member_search_load;
+            Load += MemberSearchLoad;
+            //×ボタン消す
             ControlBox = false;
         }
 
-        private void Member_search_load(object sender, EventArgs e)
+        /// <summary>
+        /// ロード時の処理
+        /// </summary>
+        private void MemberSearchLoad(object sender, EventArgs e)
         {
             //データ表示
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
@@ -39,15 +42,22 @@ namespace SportsClubSystem
             }
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 戻るボタン
+        /// </summary>
+        private void backButtonClick(object sender, EventArgs e)
         {
-            //戻るボタン
-            this.Close();//この画面を閉じる
-            Sub_menu sub = new Sub_menu();
-            sub.Visible = true;//サブメニュー画面を表示
+            //この画面を閉じる
+            this.Close();
+            SubMenu sub = new SubMenu();
+            //サブメニュー画面を表示
+            sub.Visible = true;
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 検索ボタン
+        /// </summary>
+        private void searchButtonClick(object sender, EventArgs e)
         {
             //データ表示
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
@@ -72,7 +82,8 @@ namespace SportsClubSystem
                         //DataTableを生成
                         var dataTabel = new DataTable();
                         //会員番号と検索番号が同じ行を表示
-                        var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE t_product.member_id LIKE " + serchId, con);
+                        var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
+                            "t_product.member_id LIKE " + serchId, con);
 
                         adapter.Fill(dataTabel);
                         dataGridView_s.DataSource = dataTabel;
@@ -80,7 +91,8 @@ namespace SportsClubSystem
                     else
                     {
                         //数字じゃなければエラーメッセージ
-                        DialogResult result = MessageBox.Show("数字以外は入力出来ません。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult result = MessageBox.Show("数字以外は入力出来ません。", 
+                            "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

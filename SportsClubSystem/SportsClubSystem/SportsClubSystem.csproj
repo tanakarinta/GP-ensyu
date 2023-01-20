@@ -96,64 +96,64 @@
     <Compile Include="S_member.Designer.cs">
       <DependentUpon>S_member.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main_menu.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main_menu.Designer.cs">
-      <DependentUpon>Main_menu.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sub_menu.cs">
+    <Compile Include="SubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sub_menu.Designer.cs">
-      <DependentUpon>Sub_menu.cs</DependentUpon>
+    <Compile Include="SubMenu.Designer.cs">
+      <DependentUpon>SubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member_search.cs">
+    <Compile Include="MemberSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member_search.Designer.cs">
-      <DependentUpon>Member_search.cs</DependentUpon>
+    <Compile Include="MemberSearch.Designer.cs">
+      <DependentUpon>MemberSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member_registration.cs">
+    <Compile Include="MemberRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member_registration.Designer.cs">
-      <DependentUpon>Member_registration.cs</DependentUpon>
+    <Compile Include="MemberRegistration.Designer.cs">
+      <DependentUpon>MemberRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member_fix.cs">
+    <Compile Include="MemberFix.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member_fix.Designer.cs">
-      <DependentUpon>Member_fix.cs</DependentUpon>
+    <Compile Include="MemberFix.Designer.cs">
+      <DependentUpon>MemberFix.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member_delete.cs">
+    <Compile Include="MemberDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member_delete.Designer.cs">
-      <DependentUpon>Member_delete.cs</DependentUpon>
+    <Compile Include="MemberDelete.Designer.cs">
+      <DependentUpon>MemberDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Registration_check.resx">
       <DependentUpon>Registration_check.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main_menu.resx">
-      <DependentUpon>Main_menu.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sub_menu.resx">
-      <DependentUpon>Sub_menu.cs</DependentUpon>
+    <EmbeddedResource Include="SubMenu.resx">
+      <DependentUpon>SubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member_search.resx">
-      <DependentUpon>Member_search.cs</DependentUpon>
+    <EmbeddedResource Include="MemberSearch.resx">
+      <DependentUpon>MemberSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member_registration.resx">
-      <DependentUpon>Member_registration.cs</DependentUpon>
+    <EmbeddedResource Include="MemberRegistration.resx">
+      <DependentUpon>MemberRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member_fix.resx">
-      <DependentUpon>Member_fix.cs</DependentUpon>
+    <EmbeddedResource Include="MemberFix.resx">
+      <DependentUpon>MemberFix.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member_delete.resx">
-      <DependentUpon>Member_delete.cs</DependentUpon>
+    <EmbeddedResource Include="MemberDelete.resx">
+      <DependentUpon>MemberDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

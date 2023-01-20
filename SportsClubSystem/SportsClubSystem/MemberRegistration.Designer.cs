@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class Member_registration
+    partial class MemberRegistration
     {
         /// <summary>
         /// Required designer variable.
@@ -69,7 +69,7 @@ namespace SportsClubSystem
             this.registButton.TabIndex = 3;
             this.registButton.Text = "登録";
             this.registButton.UseVisualStyleBackColor = true;
-            this.registButton.Click += new System.EventHandler(this.registButton_Click);
+            this.registButton.Click += new System.EventHandler(this.registButtonClick);
             // 
             // backButton
             // 
@@ -79,7 +79,7 @@ namespace SportsClubSystem
             this.backButton.TabIndex = 4;
             this.backButton.Text = "戻る";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Click += new System.EventHandler(this.backButtonClick);
             // 
             // label1
             // 

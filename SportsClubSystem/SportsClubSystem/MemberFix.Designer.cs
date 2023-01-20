@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class Member_fix
+    partial class MemberFix
     {
         /// <summary>
         /// Required designer variable.
@@ -97,7 +97,7 @@ namespace SportsClubSystem
             this.backButton.TabIndex = 6;
             this.backButton.Text = "戻る";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Click += new System.EventHandler(this.backButtonClick);
             // 
             // fixButton
             // 
@@ -107,7 +107,7 @@ namespace SportsClubSystem
             this.fixButton.TabIndex = 5;
             this.fixButton.Text = "修正";
             this.fixButton.UseVisualStyleBackColor = true;
-            this.fixButton.Click += new System.EventHandler(this.fixButton_Click);
+            this.fixButton.Click += new System.EventHandler(this.fixButtonClick);
             // 
             // addressBox
             // 
@@ -158,7 +158,7 @@ namespace SportsClubSystem
             this.searchButton.TabIndex = 18;
             this.searchButton.Text = "検索";
             this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
             // 
             // Member_fix
             // 

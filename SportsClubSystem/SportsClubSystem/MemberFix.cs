@@ -4,17 +4,26 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
+//会員情報修正画面
 namespace SportsClubSystem
 {
-    public partial class Member_fix : Form
+    public partial class MemberFix : Form
     {
-        public Member_fix()
+        /// <summary>
+        /// Loadの設定
+        /// </summary>
+        public MemberFix()
         {
             InitializeComponent();
-            this.Load += Member_fix_load;
+            Load += MemberFixLoad;
+            //×ボタン消す
+            ControlBox = false;
         }
 
-        private void Member_fix_load(object sender, EventArgs e)
+        /// <summary>
+        /// ロード時の処理
+        /// </summary>
+        private void MemberFixLoad(object sender, EventArgs e)
         {
             //データ表示
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
@@ -25,6 +34,7 @@ namespace SportsClubSystem
                 var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
 
                 adapter.Fill(dataTabel);
+                //列の名称設定
                 dataGridView_f.DataSource = dataTabel;
                 dataGridView_f.Columns[0].HeaderText = "会員番号";
                 dataGridView_f.Columns[1].HeaderText = "氏名";
@@ -33,25 +43,35 @@ namespace SportsClubSystem
             }
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 戻るボタン
+        /// </summary>
+        private void backButtonClick(object sender, EventArgs e)
         {
-            //戻るボタン
-            this.Close();//この画面を閉じる
-            Sub_menu sub = new Sub_menu();
-            sub.Visible = true;//サブメニュー画面を表示
+            //この画面を閉じる
+            this.Close();
+            SubMenu sub = new SubMenu();
+            //サブメニュー画面を表示
+            sub.Visible = true;
         }
 
-        private void fixButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 修正ボタン
+        /// </summary>
+        private void fixButtonClick(object sender, EventArgs e)
         {
             //確認表示
-            DialogResult result = MessageBox.Show("修正してもよろしいですか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)//OKボタンを押したら
+            DialogResult result = MessageBox.Show("修正してもよろしいですか？", "確認", 
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //OKボタンを押したら
+            if (result == DialogResult.OK)
             {
                 //ボックスが空もしくは数字以外
-                if (String.IsNullOrEmpty(idBox.Text)|| !numberBox.Text.All(char.IsDigit))
+                if (String.IsNullOrEmpty(idBox.Text)|| !idBox.Text.All(char.IsDigit))
                 {
                     //エラーを表示
-                    DialogResult error = MessageBox.Show("会員番号を半角数字で入力してください。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult error = MessageBox.Show("会員番号を半角数字で入力してください。",
+                        "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 //修正情報が全部空なら
                 else if (!String.IsNullOrEmpty(nameBox.Text) || !String.IsNullOrEmpty(numberBox.Text) ||
@@ -71,7 +91,8 @@ namespace SportsClubSystem
                                 if (!String.IsNullOrEmpty(nameBox.Text))
                                 {
                                     //名前
-                                    cmd.CommandText = "UPDATE t_product set member_name = @Name WHERE member_id = @Id";
+                                    cmd.CommandText = "UPDATE t_product set member_name = @Name WHERE " +
+                                        "member_id = @Id";
                                     //パラメータセット
                                     cmd.Parameters.Add("Name", DbType.String);
                                     cmd.Parameters.Add("Id", DbType.Int64);
@@ -83,7 +104,8 @@ namespace SportsClubSystem
                                 if (!String.IsNullOrEmpty(addressBox.Text))
                                 {
                                     //住所
-                                    cmd.CommandText = "UPDATE t_product set member_address = @Address WHERE member_id = @Id";
+                                    cmd.CommandText = "UPDATE t_product set member_address = @Address WHERE " +
+                                        "member_id = @Id";
                                     //パラメータセット
                                     cmd.Parameters.Add("Address", DbType.String);
                                     cmd.Parameters.Add("Id", DbType.Int64);
@@ -95,7 +117,8 @@ namespace SportsClubSystem
                                 if (!String.IsNullOrEmpty(numberBox.Text))
                                 {
                                     //電話番号
-                                    cmd.CommandText = "UPDATE t_product set member_phone_number = @Number WHERE member_id = @Id";
+                                    cmd.CommandText = "UPDATE t_product set member_phone_number = @Number WHERE " +
+                                        "member_id = @Id";
                                     //パラメータセット
                                     cmd.Parameters.Add("Number", DbType.String);
                                     cmd.Parameters.Add("Id", DbType.Int64);
@@ -110,7 +133,8 @@ namespace SportsClubSystem
                                 //DataTableを生成
                                 var dataTabel = new DataTable();
                                 //会員番号と検索番号が同じ行を表示
-                                var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE t_product.member_id LIKE " + serchId, con);
+                                var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
+                                    "t_product.member_id LIKE " + serchId, con);
 
                                 adapter.Fill(dataTabel);
                                 dataGridView_f.DataSource = dataTabel;
@@ -120,18 +144,23 @@ namespace SportsClubSystem
                     else
                     {
                         //エラーを表示
-                        DialogResult error = MessageBox.Show("電話番号は半角数字のみで入力してください。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult error = MessageBox.Show("電話番号は半角数字のみで入力してください。", 
+                            "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
                     //エラーを表示
-                    DialogResult error = MessageBox.Show("修正するデータを入力してください。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult error = MessageBox.Show("修正するデータを入力してください。", "注意",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 検索ボタン
+        /// </summary>
+        private void searchButtonClick(object sender, EventArgs e)
         {
             //データ表示
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
@@ -156,7 +185,8 @@ namespace SportsClubSystem
                         //DataTableを生成
                         var dataTabel = new DataTable();
                         //会員番号と検索番号が同じ行を表示
-                        var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE t_product.member_id LIKE " + serchId, con);
+                        var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
+                            "t_product.member_id LIKE " + serchId, con);
 
                         adapter.Fill(dataTabel);
                         dataGridView_f.DataSource = dataTabel;
@@ -164,7 +194,8 @@ namespace SportsClubSystem
                     else
                     {
                         //数字じゃなければエラーメッセージ
-                        DialogResult result = MessageBox.Show("数字以外は入力出来ません。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult result = MessageBox.Show("数字以外は入力出来ません。", 
+                            "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
@@ -28,7 +22,8 @@ namespace SportsClubSystem
                 {
                     //値を定義
                     command.CommandText =
-                        "create table t_product(member_id INTEGER PRIMARY KEY AUTOINCREMENT,member_name TEXT,member_address TEXT,member_phone_number TEXT)";
+                        "create table t_product(member_id INTEGER PRIMARY KEY AUTOINCREMENT,member_name " +
+                        "TEXT,member_address TEXT,member_phone_number TEXT)";
                     command.ExecuteNonQuery();
                 }
                 con.Close();
@@ -45,7 +40,8 @@ namespace SportsClubSystem
                 {
                     SQLiteCommand cmd = con.CreateCommand();
                     //インサート
-                    cmd.CommandText = "INSERT INTO t_product (member_name, member_address, member_phone_number) VALUES (@Name, @Address, @Number)";
+                    cmd.CommandText = "INSERT INTO t_product (member_name, member_address, " +
+                        "member_phone_number) VALUES (@Name, @Address, @Number)";
                     //パラメータセット
                     cmd.Parameters.Add("Name", DbType.String);
                     cmd.Parameters.Add("Address", DbType.String);
@@ -70,7 +66,6 @@ namespace SportsClubSystem
                 var dataTabel = new DataTable();
                 //SQLの実行
                 var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
-                
                 adapter.Fill(dataTabel);
                 dataGridView1.DataSource = dataTabel;
             }
@@ -86,7 +81,8 @@ namespace SportsClubSystem
                 {
                     SQLiteCommand cmd = con.CreateCommand();
                     //インサート
-                    cmd.CommandText = "UPDATE t_product set member_name = @Name, member_address = @Address, member_phone_number = @Number WHERE member_id = @Id";
+                    cmd.CommandText = "UPDATE t_product set member_name = @Name, member_address" +
+                        " = @Address, member_phone_number = @Number WHERE member_id = @Id";
                     //パラメータセット
                     cmd.Parameters.Add("Name", DbType.String);
                     cmd.Parameters.Add("Address", DbType.String);
@@ -110,7 +106,7 @@ namespace SportsClubSystem
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
             {
                 con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
+                using (SQLiteTransaction trans = con.BeginTransaction())    
                 {
                     SQLiteCommand cmd = con.CreateCommand();
                     //インサート
@@ -164,7 +160,8 @@ namespace SportsClubSystem
                     //DataTableを生成
                     var dataTabel = new DataTable();
                     //会員番号と検索番号が同じ行を表示
-                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE t_product.member_id LIKE " + serchId, con);
+                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
+                        "t_product.member_id LIKE " + serchId, con);
 
                     adapter.Fill(dataTabel);
                     dataGridView1.DataSource = dataTabel;
@@ -174,29 +171,8 @@ namespace SportsClubSystem
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Sub_menu sub = new Sub_menu();
+            SubMenu sub = new SubMenu();
             sub.Visible = true;//サブメニュー画面を表示
         }
-
-        //private void button9_Click(object sender, EventArgs e)
-        //{
-        //    using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
-        //    {
-        //        con.Open();
-        //        using (SQLiteTransaction trans = con.BeginTransaction())
-        //        {
-        //            SQLiteCommand cmd = con.CreateCommand();
-        //            //インサート
-        //            cmd.CommandText = "SELECT * FROM t_product WHERE t_product.member_id LIKE 1";
-        //            string sql = cmd;
-        //            DialogResult result = MessageBox.Show(cmd, "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
     }
 }
-//using (SQLiteCommand command = con.CreateCommand())
-//{
-//    string sql = command.CommandText = "SELECT * FROM t_product WHERE t_product.member_id LIKE 1";
-//    DialogResult result = MessageBox.Show(sql, "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//}

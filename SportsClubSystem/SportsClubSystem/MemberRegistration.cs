@@ -4,27 +4,39 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Data.SQLite;
 
+//会員登録画面
 namespace SportsClubSystem
 {
-    public partial class Member_registration : Form
+    public partial class MemberRegistration : Form
     {
-        public Member_registration()
+        public MemberRegistration()
         {
             InitializeComponent();
+            //×ボタン消す
+            ControlBox = false;
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 戻るボタン
+        /// </summary>
+        private void backButtonClick(object sender, EventArgs e)
         {
-            //戻るボタン
-            this.Close();//この画面を閉じる
-            Sub_menu sub = new Sub_menu();
-            sub.Visible = true;//サブメニュー画面を表示
+            //この画面を閉じる
+            this.Close();
+            SubMenu sub = new SubMenu();
+            //サブメニュー画面を表示
+            sub.Visible = true;
         }
 
-        private void registButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 登録ボタン
+        /// </summary>
+        private void registButtonClick(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("登録してもよろしいですか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)//OKボタンを押したら
+            DialogResult result = MessageBox.Show("登録してもよろしいですか？", "確認",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //OKボタンを押したら
+            if (result == DialogResult.OK)
             {
                 //入力項目がすべて入力されていたら
                 if (!String.IsNullOrEmpty(nameBox.Text) && !String.IsNullOrEmpty(numberBox.Text) &&
@@ -40,7 +52,8 @@ namespace SportsClubSystem
                             {
                                 SQLiteCommand cmd = con.CreateCommand();
                                 //インサート
-                                cmd.CommandText = "INSERT INTO t_product (member_name, member_address, member_phone_number) VALUES (@Name, @Address, @Number)";
+                                cmd.CommandText = "INSERT INTO t_product (member_name, member_address, " +
+                                    "member_phone_number) VALUES (@Name, @Address, @Number)";
                                 //パラメータセット
                                 cmd.Parameters.Add("Name", DbType.String);
                                 cmd.Parameters.Add("Address", DbType.String);
@@ -53,20 +66,23 @@ namespace SportsClubSystem
                                 //コミット
                                 trans.Commit();
                                 ////会員番号を表示
-                                //DialogResult memberId = MessageBox.Show("会員番号は〇〇です。", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //DialogResult memberId = MessageBox.Show("会員番号は〇〇です。",
+                                //"確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
                     else
                     {
                         //エラーを表示
-                        DialogResult error = MessageBox.Show("電話番号は半角数字のみで入力してください。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult error = MessageBox.Show("電話番号は半角数字のみで入力してください。",
+                            "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
                     //エラーを表示
-                    DialogResult error = MessageBox.Show("必要な情報が入力されていません。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult error = MessageBox.Show("必要な情報が入力されていません。",
+                        "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

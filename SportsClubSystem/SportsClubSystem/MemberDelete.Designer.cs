@@ -1,7 +1,7 @@
 ﻿
 namespace SportsClubSystem
 {
-    partial class Member_delete
+    partial class MemberDelete
     {
         /// <summary>
         /// Required designer variable.
@@ -31,58 +31,84 @@ namespace SportsClubSystem
         {
             this.backButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.deleteBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.dataGridView_d = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_d)).BeginInit();
             this.SuspendLayout();
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(356, 289);
+            this.backButton.Location = new System.Drawing.Point(356, 382);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(81, 24);
             this.backButton.TabIndex = 3;
             this.backButton.Text = "戻る";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Click += new System.EventHandler(this.backButtonClick);
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(356, 228);
+            this.deleteButton.Location = new System.Drawing.Point(356, 317);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(81, 24);
             this.deleteButton.TabIndex = 2;
             this.deleteButton.Text = "削除";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(250, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 15);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "会員番号を入力";
+            this.deleteButton.Click += new System.EventHandler(this.deleteButtonClick);
             // 
             // deleteBox
             // 
             this.deleteBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.deleteBox.Location = new System.Drawing.Point(253, 168);
+            this.deleteBox.Location = new System.Drawing.Point(230, 85);
             this.deleteBox.Name = "deleteBox";
             this.deleteBox.Size = new System.Drawing.Size(291, 22);
             this.deleteBox.TabIndex = 1;
             // 
-            // Member_delete
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(527, 85);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(81, 24);
+            this.searchButton.TabIndex = 22;
+            this.searchButton.Text = "検索";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
+            // 
+            // dataGridView_d
+            // 
+            this.dataGridView_d.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_d.Location = new System.Drawing.Point(98, 146);
+            this.dataGridView_d.Name = "dataGridView_d";
+            this.dataGridView_d.RowHeadersWidth = 51;
+            this.dataGridView_d.RowTemplate.Height = 24;
+            this.dataGridView_d.Size = new System.Drawing.Size(605, 134);
+            this.dataGridView_d.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(252, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 15);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "削除したい会員番号を入力";
+            // 
+            // MemberDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.dataGridView_d);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.deleteBox);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.deleteButton);
-            this.Name = "Member_delete";
+            this.Name = "MemberDelete";
             this.Text = "会員削除画面";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_d)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,7 +117,9 @@ namespace SportsClubSystem
         #endregion
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox deleteBox;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.DataGridView dataGridView_d;
+        private System.Windows.Forms.Label label1;
     }
 }
