@@ -26,20 +26,20 @@ namespace SportsClubSystem
         private void MemberFixLoad(object sender, EventArgs e)
         {
             //データ表示
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+            using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
                 //DataTableを生成
-                var dataTabel = new DataTable();
+                DataTable dataTabel = new DataTable();
                 //SQLの実行
-                var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", connection);
 
                 adapter.Fill(dataTabel);
                 //列の名称設定
-                dataGridView_f.DataSource = dataTabel;
-                dataGridView_f.Columns[0].HeaderText = "会員番号";
-                dataGridView_f.Columns[1].HeaderText = "氏名";
-                dataGridView_f.Columns[2].HeaderText = "住所";
-                dataGridView_f.Columns[3].HeaderText = "電話番号";
+                dataGridViewF.DataSource = dataTabel;
+                dataGridViewF.Columns[0].HeaderText = "会員番号";
+                dataGridViewF.Columns[1].HeaderText = "氏名";
+                dataGridViewF.Columns[2].HeaderText = "住所";
+                dataGridViewF.Columns[3].HeaderText = "電話番号";
             }
         }
 
@@ -73,7 +73,7 @@ namespace SportsClubSystem
                     DialogResult error = MessageBox.Show("会員番号を半角数字で入力してください。",
                         "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                //修正情報が全部空なら
+                //修正情報が入ってたら
                 else if (!String.IsNullOrEmpty(nameBox.Text) || !String.IsNullOrEmpty(numberBox.Text) ||
                     !String.IsNullOrEmpty(addressBox.Text))
                 {
@@ -81,12 +81,12 @@ namespace SportsClubSystem
                     if (numberBox.Text.All(char.IsDigit))
                     {
                         //データ修正
-                        using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+                        using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
                         {
-                            con.Open();
-                            using (SQLiteTransaction trans = con.BeginTransaction())
+                            connection.Open();
+                            using (SQLiteTransaction transaction = connection.BeginTransaction())
                             {
-                                SQLiteCommand cmd = con.CreateCommand();
+                                SQLiteCommand cmd = connection.CreateCommand();
                                 //入力があったら
                                 if (!String.IsNullOrEmpty(nameBox.Text))
                                 {
@@ -128,16 +128,16 @@ namespace SportsClubSystem
                                     cmd.ExecuteNonQuery(); 
                                 }
                                 //コミット
-                                trans.Commit();
+                                transaction.Commit();
                                 string serchId = idBox.Text;
                                 //DataTableを生成
-                                var dataTabel = new DataTable();
+                                DataTable dataTabel = new DataTable();
                                 //会員番号と検索番号が同じ行を表示
-                                var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
-                                    "t_product.member_id LIKE " + serchId, con);
+                                SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
+                                    "t_product.member_id LIKE " + serchId, connection);
 
                                 adapter.Fill(dataTabel);
-                                dataGridView_f.DataSource = dataTabel;
+                                dataGridViewF.DataSource = dataTabel;
                             }
                         }
                     }
@@ -163,19 +163,19 @@ namespace SportsClubSystem
         private void searchButtonClick(object sender, EventArgs e)
         {
             //データ表示
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+            using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
                 //検索番号を格納
                 string serchId = idBox.Text;
                 if (serchId == "")
                 {
                     //DataTableを生成
-                    var dataTabel = new DataTable();
+                    DataTable dataTabel = new DataTable();
                     //SQLの実行
-                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
+                    SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", connection);
 
                     adapter.Fill(dataTabel);
-                    dataGridView_f.DataSource = dataTabel;
+                    dataGridViewF.DataSource = dataTabel;
                 }
                 else
                 {
@@ -183,13 +183,13 @@ namespace SportsClubSystem
                     if (serchId.All(char.IsDigit))
                     {
                         //DataTableを生成
-                        var dataTabel = new DataTable();
+                        DataTable dataTabel = new DataTable();
                         //会員番号と検索番号が同じ行を表示
-                        var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
-                            "t_product.member_id LIKE " + serchId, con);
+                        SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
+                            "t_product.member_id LIKE " + serchId, connection);
 
                         adapter.Fill(dataTabel);
-                        dataGridView_f.DataSource = dataTabel;
+                        dataGridViewF.DataSource = dataTabel;
                     }
                     else
                     {
@@ -197,6 +197,14 @@ namespace SportsClubSystem
                         DialogResult result = MessageBox.Show("数字以外は入力出来ません。", 
                             "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+                //検索結果が０件だったら
+                int cnt = dataGridViewF.Rows.Count;
+                if (cnt == 0)
+                {
+                    //ダイアログ表示
+                    DialogResult result = MessageBox.Show("会員番号　" + idBox.Text + "　は登録されていません。",
+                            "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

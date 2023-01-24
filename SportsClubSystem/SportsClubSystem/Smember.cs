@@ -5,9 +5,9 @@ using System.Data.SQLite;
 
 namespace SportsClubSystem
 {
-    public partial class S_member : Form
+    public partial class Smember : Form
     {
-        public S_member()
+        public Smember()
         {
             InitializeComponent();
         }
@@ -47,9 +47,9 @@ namespace SportsClubSystem
                     cmd.Parameters.Add("Address", DbType.String);
                     cmd.Parameters.Add("Number", DbType.String);
                     //データ追加
-                    cmd.Parameters["Name"].Value = textBox1.Text;
-                    cmd.Parameters["Address"].Value = textBox2.Text;
-                    cmd.Parameters["Number"].Value = textBox7.Text;
+                    cmd.Parameters["Name"].Value = nameBox.Text;
+                    cmd.Parameters["Address"].Value = addressBox.Text;
+                    cmd.Parameters["Number"].Value = numberBox.Text;
                     cmd.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
@@ -67,7 +67,7 @@ namespace SportsClubSystem
                 //SQLの実行
                 var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
                 adapter.Fill(dataTabel);
-                dataGridView1.DataSource = dataTabel;
+                dataGridViewS.DataSource = dataTabel;
             }
         }
 
@@ -89,10 +89,10 @@ namespace SportsClubSystem
                     cmd.Parameters.Add("Number", DbType.String);
                     cmd.Parameters.Add("Id", DbType.Int64);
                     //データ追加
-                    cmd.Parameters["Name"].Value = textBox3.Text;
-                    cmd.Parameters["Address"].Value = textBox8.Text;
-                    cmd.Parameters["Number"].Value = textBox4.Text;
-                    cmd.Parameters["Id"].Value = int.Parse(textBox5.Text);
+                    cmd.Parameters["Name"].Value = nameFixBox.Text;
+                    cmd.Parameters["Address"].Value = addressFixBox.Text;
+                    cmd.Parameters["Number"].Value = numberFixBox.Text;
+                    cmd.Parameters["Id"].Value = int.Parse(seachCdBox.Text);
                     cmd.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
@@ -114,7 +114,7 @@ namespace SportsClubSystem
                     //パラメータセット
                     cmd.Parameters.Add("Id", DbType.Int64);
                     //データ削除
-                    cmd.Parameters["Id"].Value = int.Parse(textBox6.Text);
+                    cmd.Parameters["Id"].Value = int.Parse(searchCdBox.Text);
                     cmd.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
@@ -144,7 +144,7 @@ namespace SportsClubSystem
             using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
             {
                 //検索番号を格納
-                string serchId = textBox9.Text;
+                string serchId = seachBox.Text;
                 if (serchId == "")
                 {
                     //DataTableを生成
@@ -153,7 +153,7 @@ namespace SportsClubSystem
                     var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
 
                     adapter.Fill(dataTabel);
-                    dataGridView1.DataSource = dataTabel;
+                    dataGridViewS.DataSource = dataTabel;
                 }
                 else
                 {
@@ -164,7 +164,7 @@ namespace SportsClubSystem
                         "t_product.member_id LIKE " + serchId, con);
 
                     adapter.Fill(dataTabel);
-                    dataGridView1.DataSource = dataTabel;
+                    dataGridViewS.DataSource = dataTabel;
                 }
             }
         }

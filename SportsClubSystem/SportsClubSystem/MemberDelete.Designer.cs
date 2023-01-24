@@ -33,9 +33,9 @@ namespace SportsClubSystem
             this.deleteButton = new System.Windows.Forms.Button();
             this.deleteBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.dataGridView_d = new System.Windows.Forms.DataGridView();
+            this.dataGridViewD = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_d)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewD)).BeginInit();
             this.SuspendLayout();
             // 
             // backButton
@@ -76,15 +76,17 @@ namespace SportsClubSystem
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
             // 
-            // dataGridView_d
+            // dataGridViewD
             // 
-            this.dataGridView_d.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_d.Location = new System.Drawing.Point(98, 146);
-            this.dataGridView_d.Name = "dataGridView_d";
-            this.dataGridView_d.RowHeadersWidth = 51;
-            this.dataGridView_d.RowTemplate.Height = 24;
-            this.dataGridView_d.Size = new System.Drawing.Size(605, 134);
-            this.dataGridView_d.TabIndex = 21;
+            this.dataGridViewD.AllowUserToAddRows = false;
+            this.dataGridViewD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewD.Location = new System.Drawing.Point(98, 146);
+            this.dataGridViewD.Name = "dataGridViewD";
+            this.dataGridViewD.ReadOnly = true;
+            this.dataGridViewD.RowHeadersWidth = 51;
+            this.dataGridViewD.RowTemplate.Height = 24;
+            this.dataGridViewD.Size = new System.Drawing.Size(605, 134);
+            this.dataGridViewD.TabIndex = 21;
             // 
             // label1
             // 
@@ -101,14 +103,14 @@ namespace SportsClubSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.dataGridView_d);
+            this.Controls.Add(this.dataGridViewD);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.deleteBox);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.deleteButton);
             this.Name = "MemberDelete";
             this.Text = "会員削除画面";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_d)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,7 +121,7 @@ namespace SportsClubSystem
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.TextBox deleteBox;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.DataGridView dataGridView_d;
+        private System.Windows.Forms.DataGridView dataGridViewD;
         private System.Windows.Forms.Label label1;
     }
 }

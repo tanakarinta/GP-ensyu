@@ -45,12 +45,12 @@ namespace SportsClubSystem
                     if (numberBox.Text.All(char.IsDigit))
                     {
                         //データ追加
-                        using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+                        using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
                         {
-                            con.Open();
-                            using (SQLiteTransaction trans = con.BeginTransaction())
+                            connection.Open();
+                            using (SQLiteTransaction transaction = connection.BeginTransaction())
                             {
-                                SQLiteCommand cmd = con.CreateCommand();
+                                SQLiteCommand cmd = connection.CreateCommand();
                                 //インサート
                                 cmd.CommandText = "INSERT INTO t_product (member_name, member_address, " +
                                     "member_phone_number) VALUES (@Name, @Address, @Number)";
@@ -64,10 +64,10 @@ namespace SportsClubSystem
                                 cmd.Parameters["Number"].Value = numberBox.Text;
                                 cmd.ExecuteNonQuery();
                                 //コミット
-                                trans.Commit();
+                                transaction.Commit();
                                 ////会員番号を表示
-                                //DialogResult memberId = MessageBox.Show("会員番号は〇〇です。",
-                                //"確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                DialogResult memberId = MessageBox.Show("登録に成功しました。",
+                                "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }

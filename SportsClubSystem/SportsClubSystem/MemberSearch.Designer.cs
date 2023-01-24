@@ -33,15 +33,15 @@ namespace SportsClubSystem
             this.label1 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
-            this.dataGridView_s = new System.Windows.Forms.DataGridView();
+            this.dataGridViewS = new System.Windows.Forms.DataGridView();
             this.idButton = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_s)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewS)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox
             // 
-            this.searchBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.searchBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.searchBox.Location = new System.Drawing.Point(215, 83);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(291, 22);
@@ -77,15 +77,17 @@ namespace SportsClubSystem
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButtonClick);
             // 
-            // dataGridView_s
+            // dataGridViewS
             // 
-            this.dataGridView_s.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_s.Location = new System.Drawing.Point(106, 133);
-            this.dataGridView_s.Name = "dataGridView_s";
-            this.dataGridView_s.RowHeadersWidth = 51;
-            this.dataGridView_s.RowTemplate.Height = 24;
-            this.dataGridView_s.Size = new System.Drawing.Size(586, 225);
-            this.dataGridView_s.TabIndex = 4;
+            this.dataGridViewS.AllowUserToAddRows = false;
+            this.dataGridViewS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewS.Location = new System.Drawing.Point(106, 133);
+            this.dataGridViewS.Name = "dataGridViewS";
+            this.dataGridViewS.ReadOnly = true;
+            this.dataGridViewS.RowHeadersWidth = 51;
+            this.dataGridViewS.RowTemplate.Height = 24;
+            this.dataGridViewS.Size = new System.Drawing.Size(586, 225);
+            this.dataGridViewS.TabIndex = 4;
             // 
             // idButton
             // 
@@ -98,6 +100,7 @@ namespace SportsClubSystem
             this.idButton.TabStop = true;
             this.idButton.Text = "会員番号";
             this.idButton.UseVisualStyleBackColor = true;
+            this.idButton.CheckedChanged += new System.EventHandler(this.idButtonCheckedChanged);
             // 
             // radioButton2
             // 
@@ -109,8 +112,9 @@ namespace SportsClubSystem
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "氏名";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2CheckedChanged);
             // 
-            // Member_search
+            // MemberSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,14 +122,14 @@ namespace SportsClubSystem
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.idButton);
-            this.Controls.Add(this.dataGridView_s);
+            this.Controls.Add(this.dataGridViewS);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchBox);
-            this.Name = "Member_search";
+            this.Name = "MemberSearch";
             this.Text = "会員検索画面";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_s)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +141,7 @@ namespace SportsClubSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.DataGridView dataGridView_s;
+        private System.Windows.Forms.DataGridView dataGridViewS;
         private System.Windows.Forms.RadioButton idButton;
         private System.Windows.Forms.RadioButton radioButton2;
     }

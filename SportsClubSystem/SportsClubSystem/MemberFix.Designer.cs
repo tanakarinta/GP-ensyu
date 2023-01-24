@@ -40,9 +40,9 @@ namespace SportsClubSystem
             this.numberBox = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView_f = new System.Windows.Forms.DataGridView();
+            this.dataGridViewF = new System.Windows.Forms.DataGridView();
             this.searchButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_f)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewF)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -140,15 +140,17 @@ namespace SportsClubSystem
             this.label5.TabIndex = 16;
             this.label5.Text = "修正したい箇所にデータを入力してください";
             // 
-            // dataGridView_f
+            // dataGridViewF
             // 
-            this.dataGridView_f.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_f.Location = new System.Drawing.Point(100, 89);
-            this.dataGridView_f.Name = "dataGridView_f";
-            this.dataGridView_f.RowHeadersWidth = 51;
-            this.dataGridView_f.RowTemplate.Height = 24;
-            this.dataGridView_f.Size = new System.Drawing.Size(605, 134);
-            this.dataGridView_f.TabIndex = 17;
+            this.dataGridViewF.AllowUserToAddRows = false;
+            this.dataGridViewF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewF.Location = new System.Drawing.Point(100, 89);
+            this.dataGridViewF.Name = "dataGridViewF";
+            this.dataGridViewF.ReadOnly = true;
+            this.dataGridViewF.RowHeadersWidth = 51;
+            this.dataGridViewF.RowTemplate.Height = 24;
+            this.dataGridViewF.Size = new System.Drawing.Size(605, 134);
+            this.dataGridViewF.TabIndex = 17;
             // 
             // searchButton
             // 
@@ -160,13 +162,13 @@ namespace SportsClubSystem
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
             // 
-            // Member_fix
+            // MemberFix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.dataGridView_f);
+            this.Controls.Add(this.dataGridViewF);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -178,9 +180,9 @@ namespace SportsClubSystem
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.idBox);
-            this.Name = "Member_fix";
+            this.Name = "MemberFix";
             this.Text = "会員修正画面";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_f)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewF)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,7 +200,7 @@ namespace SportsClubSystem
         private System.Windows.Forms.TextBox numberBox;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView_f;
+        private System.Windows.Forms.DataGridView dataGridViewF;
         private System.Windows.Forms.Button searchButton;
     }
 }

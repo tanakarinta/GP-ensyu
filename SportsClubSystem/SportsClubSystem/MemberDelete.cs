@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Linq;
+using System.Drawing;
 
 //会員削除画面
 namespace SportsClubSystem
@@ -25,20 +26,20 @@ namespace SportsClubSystem
         private void MemberDeleteLoad(object sender, EventArgs e)
         {
             //データ表示
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+            using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
                 //DataTableを生成
-                var dataTabel = new DataTable();
+                DataTable dataTabel = new DataTable();
                 //SQLの実行
-                var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", connection);
 
                 adapter.Fill(dataTabel);
                 //列の名称設定
-                dataGridView_d.DataSource = dataTabel;
-                dataGridView_d.Columns[0].HeaderText = "会員番号";
-                dataGridView_d.Columns[1].HeaderText = "氏名";
-                dataGridView_d.Columns[2].HeaderText = "住所";
-                dataGridView_d.Columns[3].HeaderText = "電話番号";
+                dataGridViewD.DataSource = dataTabel;
+                dataGridViewD.Columns[0].HeaderText = "会員番号";
+                dataGridViewD.Columns[1].HeaderText = "氏名";
+                dataGridViewD.Columns[2].HeaderText = "住所";
+                dataGridViewD.Columns[3].HeaderText = "電話番号";
             }
         }
 
@@ -73,12 +74,12 @@ namespace SportsClubSystem
                 else
                 {
                     //データ削除
-                    using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+                    using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
                     {
-                        con.Open();
-                        using (SQLiteTransaction trans = con.BeginTransaction())
+                        connection.Open();
+                        using (SQLiteTransaction transaction = connection.BeginTransaction())
                         {
-                            SQLiteCommand cmd = con.CreateCommand();
+                            SQLiteCommand cmd = connection.CreateCommand();
                             //インサート
                             cmd.CommandText = "DELETE FROM t_product WHERE member_id = @Id";
                             //パラメータセット
@@ -87,12 +88,12 @@ namespace SportsClubSystem
                             cmd.Parameters["Id"].Value = int.Parse(deleteBox.Text);
                             cmd.ExecuteNonQuery();
                             //コミット
-                            trans.Commit();
-                            var dataTabel = new DataTable();
+                            transaction.Commit();
+                            DataTable dataTabel = new DataTable();
                             //会員番号と検索番号が同じ行を表示
-                            var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
+                            SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", connection);
                             adapter.Fill(dataTabel);
-                            dataGridView_d.DataSource = dataTabel;
+                            dataGridViewD.DataSource = dataTabel;
                         }
                     }
                 }
@@ -105,19 +106,19 @@ namespace SportsClubSystem
         private void searchButtonClick(object sender, EventArgs e)
         {
             //データ表示
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+            using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
                 //検索番号を格納
                 string serchId = deleteBox.Text;
                 if (serchId == "")
                 {
                     //DataTableを生成
-                    var dataTabel = new DataTable();
+                    DataTable dataTabel = new DataTable();
                     //SQLの実行
-                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
+                    SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", connection);
 
                     adapter.Fill(dataTabel);
-                    dataGridView_d.DataSource = dataTabel;
+                    dataGridViewD.DataSource = dataTabel;
                 }
                 else
                 {
@@ -125,13 +126,13 @@ namespace SportsClubSystem
                     if (serchId.All(char.IsDigit))
                     {
                         //DataTableを生成
-                        var dataTabel = new DataTable();
+                        DataTable dataTabel = new DataTable();
                         //会員番号と検索番号が同じ行を表示
-                        var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
-                            "t_product.member_id LIKE " + serchId, con);
+                        SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
+                            "t_product.member_id LIKE " + serchId, connection);
 
                         adapter.Fill(dataTabel);
-                        dataGridView_d.DataSource = dataTabel;
+                        dataGridViewD.DataSource = dataTabel;
                     }
                     else
                     {
@@ -139,6 +140,14 @@ namespace SportsClubSystem
                         DialogResult result = MessageBox.Show("数字以外は入力出来ません。",
                             "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+                //検索結果が０件だったら
+                int cnt = dataGridViewD.Rows.Count;
+                if (cnt == 0)
+                {
+                    //ダイアログ表示
+                    DialogResult result = MessageBox.Show("会員番号　" + deleteBox.Text + "　は登録されていません。",
+                            "注意", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
