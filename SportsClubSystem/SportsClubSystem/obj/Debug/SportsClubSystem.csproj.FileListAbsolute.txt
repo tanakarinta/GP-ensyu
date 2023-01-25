@@ -16,7 +16,6 @@ C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\bin\Debug\System.Data.SQLite.xml
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.csproj.CopyComplete
-C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.Registration_check.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.MemberFix.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.MainMenu.resources
 C:\Users\s20217033\Desktop\GP-rensyu\SportsClubSystem\SportsClubSystem\obj\Debug\SportsClubSystem.SubMenu.resources

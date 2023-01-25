@@ -11,20 +11,13 @@ namespace SportsClubSystem
     public partial class MemberDelete : Form
     {
         /// <summary>
-        /// Loadの設定
+        /// ロード時の処理
         /// </summary>
         public MemberDelete()
         {
             InitializeComponent();
-            Load += MemberDeleteLoad;
             //×ボタン消す
             ControlBox = false;
-        }
-        /// <summary>
-        /// ロード時の処理
-        /// </summary>
-        private void MemberDeleteLoad(object sender, EventArgs e)
-        {
             //データ表示
             using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {

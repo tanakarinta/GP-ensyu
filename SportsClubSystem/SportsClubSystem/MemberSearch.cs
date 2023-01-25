@@ -13,21 +13,13 @@ namespace SportsClubSystem
         string searchType = "member_id";
 
         /// <summary>
-        /// Loadの設定
+        /// ロード時の処理
         /// </summary>
         public MemberSearch()
         {
             InitializeComponent();
-            Load += MemberSearchLoad;
             //×ボタン消す
             ControlBox = false;
-        }
-
-        /// <summary>
-        /// ロード時の処理
-        /// </summary>
-        private void MemberSearchLoad(object sender, EventArgs e)
-        {
             //データ表示
             using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
