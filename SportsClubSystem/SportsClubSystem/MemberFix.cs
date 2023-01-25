@@ -10,22 +10,14 @@ namespace SportsClubSystem
     public partial class MemberFix : Form
     {
         /// <summary>
-        /// Loadの設定
+        /// ロード時の処理
         /// </summary>
         public MemberFix()
         {
             InitializeComponent();
-            Load += MemberFixLoad;
             //×ボタン消す
             ControlBox = false;
-        }
 
-        /// <summary>
-        /// ロード時の処理
-        /// </summary>
-        private void MemberFixLoad(object sender, EventArgs e)
-        {
-            //データ表示
             using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
                 //DataTableを生成
@@ -135,9 +127,11 @@ namespace SportsClubSystem
                                 //会員番号と検索番号が同じ行を表示
                                 SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
                                     "t_product.member_id LIKE " + serchId, connection);
-
                                 adapter.Fill(dataTabel);
                                 dataGridViewF.DataSource = dataTabel;
+                                //成功メッセージ
+                                DialogResult memberId = MessageBox.Show("修正に成功しました。",
+                                "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }

@@ -65,7 +65,7 @@ namespace SportsClubSystem
                                 cmd.ExecuteNonQuery();
                                 //コミット
                                 transaction.Commit();
-                                ////会員番号を表示
+                                //成功メッセージ
                                 DialogResult memberId = MessageBox.Show("登録に成功しました。",
                                 "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }

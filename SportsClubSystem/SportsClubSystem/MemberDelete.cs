@@ -90,10 +90,13 @@ namespace SportsClubSystem
                             //コミット
                             transaction.Commit();
                             DataTable dataTabel = new DataTable();
-                            //会員番号と検索番号が同じ行を表示
+                            //会員番号と検索番号が同じ行を削除
                             SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM t_product", connection);
                             adapter.Fill(dataTabel);
                             dataGridViewD.DataSource = dataTabel;
+                            //成功メッセージ
+                            DialogResult memberId = MessageBox.Show("削除に成功しました。",
+                            "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }

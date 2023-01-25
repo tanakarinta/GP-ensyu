@@ -84,12 +84,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Registration_check.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registration_check.Designer.cs">
-      <DependentUpon>Registration_check.cs</DependentUpon>
-    </Compile>
     <Compile Include="Smember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,9 +128,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Registration_check.resx">
-      <DependentUpon>Registration_check.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
