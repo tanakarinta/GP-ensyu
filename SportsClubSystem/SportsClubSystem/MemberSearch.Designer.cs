@@ -36,7 +36,10 @@ namespace SportsClubSystem
             this.dataGridViewS = new System.Windows.Forms.DataGridView();
             this.idButton = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBox
@@ -114,12 +117,34 @@ namespace SportsClubSystem
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2CheckedChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 15);
+            this.label2.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = global::SportsClubSystem.Properties.Resources.検索アイコン;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 358);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // MemberSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.idButton);
             this.Controls.Add(this.dataGridViewS);
@@ -128,8 +153,10 @@ namespace SportsClubSystem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchBox);
             this.Name = "MemberSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "会員検索画面";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +171,7 @@ namespace SportsClubSystem
         private System.Windows.Forms.DataGridView dataGridViewS;
         private System.Windows.Forms.RadioButton idButton;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -3,7 +3,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Linq;
-using System.Drawing;
 
 //会員削除画面
 namespace SportsClubSystem
@@ -88,7 +87,7 @@ namespace SportsClubSystem
                             adapter.Fill(dataTabel);
                             dataGridViewD.DataSource = dataTabel;
                             //成功メッセージ
-                            DialogResult memberId = MessageBox.Show("削除に成功しました。",
+                            DialogResult memberId = MessageBox.Show("会員番号　" + deleteBox.Text + "　を削除しました。",
                             "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }

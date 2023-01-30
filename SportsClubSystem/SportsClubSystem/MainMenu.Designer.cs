@@ -53,14 +53,15 @@ namespace SportsClubSystem
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButtonClick);
             // 
-            // Main_menu
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.subMenuButton);
-            this.Name = "Main_menu";
+            this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "メインメニュー";
             this.ResumeLayout(false);
 

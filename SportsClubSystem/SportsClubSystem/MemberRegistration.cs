@@ -9,6 +9,7 @@ namespace SportsClubSystem
 {
     public partial class MemberRegistration : Form
     {
+        int currentId;
         public MemberRegistration()
         {
             InitializeComponent();
@@ -65,8 +66,17 @@ namespace SportsClubSystem
                                 cmd.ExecuteNonQuery();
                                 //コミット
                                 transaction.Commit();
+                                //会員番号取得
+                                cmd.CommandText = "SELECT last_insert_rowid()";
+                                SQLiteDataReader reader = cmd.ExecuteReader();
+                                while (reader.Read())
+                                {
+                                    currentId = reader.GetInt32(0);
+                                }
+                                reader.Close();
+                                connection.Close();
                                 //成功メッセージ
-                                DialogResult memberId = MessageBox.Show("登録に成功しました。",
+                                DialogResult memberId = MessageBox.Show("会員番号は　" + currentId + "　です。",
                                 "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }

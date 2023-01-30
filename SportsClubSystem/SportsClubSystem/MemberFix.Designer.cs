@@ -42,7 +42,9 @@ namespace SportsClubSystem
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewF = new System.Windows.Forms.DataGridView();
             this.searchButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -162,11 +164,24 @@ namespace SportsClubSystem
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = global::SportsClubSystem.Properties.Resources.編集アイコン;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 358);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // MemberFix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.dataGridViewF);
             this.Controls.Add(this.label5);
@@ -181,8 +196,10 @@ namespace SportsClubSystem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.idBox);
             this.Name = "MemberFix";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "会員修正画面";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +219,6 @@ namespace SportsClubSystem
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridViewF;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

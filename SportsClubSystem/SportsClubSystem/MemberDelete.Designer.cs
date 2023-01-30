@@ -35,7 +35,9 @@ namespace SportsClubSystem
             this.searchButton = new System.Windows.Forms.Button();
             this.dataGridViewD = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // backButton
@@ -97,11 +99,24 @@ namespace SportsClubSystem
             this.label1.TabIndex = 20;
             this.label1.Text = "削除したい会員番号を入力";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pictureBox1.Enabled = false;
+            this.pictureBox1.Image = global::SportsClubSystem.Properties.Resources.削除アイコン;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 358);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // MemberDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.dataGridViewD);
             this.Controls.Add(this.label1);
@@ -109,8 +124,10 @@ namespace SportsClubSystem
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.deleteButton);
             this.Name = "MemberDelete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "会員削除画面";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +140,6 @@ namespace SportsClubSystem
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.DataGridView dataGridViewD;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

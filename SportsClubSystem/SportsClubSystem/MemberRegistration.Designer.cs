@@ -37,6 +37,8 @@ namespace SportsClubSystem
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // nameBox
@@ -108,11 +110,24 @@ namespace SportsClubSystem
             this.label3.TabIndex = 7;
             this.label3.Text = "電話番号";
             // 
-            // Member_registration
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pictureBox2.Enabled = false;
+            this.pictureBox2.Image = global::SportsClubSystem.Properties.Resources.登録アイコン;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 358);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // MemberRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -121,8 +136,10 @@ namespace SportsClubSystem
             this.Controls.Add(this.addressBox);
             this.Controls.Add(this.numberBox);
             this.Controls.Add(this.nameBox);
-            this.Name = "Member_registration";
+            this.Name = "MemberRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "会員登録画面";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +155,6 @@ namespace SportsClubSystem
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
