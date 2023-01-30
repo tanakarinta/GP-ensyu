@@ -78,46 +78,46 @@ namespace SportsClubSystem
                             connection.Open();
                             using (SQLiteTransaction transaction = connection.BeginTransaction())
                             {
-                                SQLiteCommand cmd = connection.CreateCommand();
+                                SQLiteCommand command = connection.CreateCommand();
                                 //入力があったら
                                 if (!String.IsNullOrEmpty(nameBox.Text))
                                 {
                                     //名前
-                                    cmd.CommandText = "UPDATE t_product set member_name = @Name WHERE " +
+                                    command.CommandText = "UPDATE t_product set member_name = @Name WHERE " +
                                         "member_id = @Id";
                                     //パラメータセット
-                                    cmd.Parameters.Add("Name", DbType.String);
-                                    cmd.Parameters.Add("Id", DbType.Int64);
+                                    command.Parameters.Add("Name", DbType.String);
+                                    command.Parameters.Add("Id", DbType.Int64);
                                     //データ追加
-                                    cmd.Parameters["Name"].Value = nameBox.Text;
-                                    cmd.Parameters["Id"].Value = int.Parse(idBox.Text);
-                                    cmd.ExecuteNonQuery();
+                                    command.Parameters["Name"].Value = nameBox.Text;
+                                    command.Parameters["Id"].Value = int.Parse(idBox.Text);
+                                    command.ExecuteNonQuery();
                                 }
                                 if (!String.IsNullOrEmpty(addressBox.Text))
                                 {
                                     //住所
-                                    cmd.CommandText = "UPDATE t_product set member_address = @Address WHERE " +
+                                    command.CommandText = "UPDATE t_product set member_address = @Address WHERE " +
                                         "member_id = @Id";
                                     //パラメータセット
-                                    cmd.Parameters.Add("Address", DbType.String);
-                                    cmd.Parameters.Add("Id", DbType.Int64);
+                                    command.Parameters.Add("Address", DbType.String);
+                                    command.Parameters.Add("Id", DbType.Int64);
                                     //データ追加
-                                    cmd.Parameters["Address"].Value = addressBox.Text;
-                                    cmd.Parameters["Id"].Value = int.Parse(idBox.Text);
-                                    cmd.ExecuteNonQuery();
+                                    command.Parameters["Address"].Value = addressBox.Text;
+                                    command.Parameters["Id"].Value = int.Parse(idBox.Text);
+                                    command.ExecuteNonQuery();
                                 }
                                 if (!String.IsNullOrEmpty(numberBox.Text))
                                 {
                                     //電話番号
-                                    cmd.CommandText = "UPDATE t_product set member_phone_number = @Number WHERE " +
+                                    command.CommandText = "UPDATE t_product set member_phone_number = @Number WHERE " +
                                         "member_id = @Id";
                                     //パラメータセット
-                                    cmd.Parameters.Add("Number", DbType.String);
-                                    cmd.Parameters.Add("Id", DbType.Int64);
+                                    command.Parameters.Add("Number", DbType.String);
+                                    command.Parameters.Add("Id", DbType.Int64);
                                     //データ追加
-                                    cmd.Parameters["Number"].Value = numberBox.Text;
-                                    cmd.Parameters["Id"].Value = int.Parse(idBox.Text);
-                                    cmd.ExecuteNonQuery(); 
+                                    command.Parameters["Number"].Value = numberBox.Text;
+                                    command.Parameters["Id"].Value = int.Parse(idBox.Text);
+                                    command.ExecuteNonQuery(); 
                                 }
                                 //コミット
                                 transaction.Commit();
