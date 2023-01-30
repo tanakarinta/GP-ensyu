@@ -15,10 +15,10 @@ namespace SportsClubSystem
         private void button1_Click(object sender, EventArgs e)
         {
             //  コネクションを開いてテーブル作成して閉じる
-            using(var con = new SQLiteConnection("Data Source=member.db"))
+            using(var connection = new SQLiteConnection("Data Source=member.db"))
             {
-                con.Open();
-                using(SQLiteCommand command = con.CreateCommand())
+                connection.Open();
+                using(SQLiteCommand command = connection.CreateCommand())
                 {
                     //値を定義
                     command.CommandText =
@@ -26,31 +26,31 @@ namespace SportsClubSystem
                         "TEXT,member_address TEXT,member_phone_number TEXT)";
                     command.ExecuteNonQuery();
                 }
-                con.Close();
+                connection.Close();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //データ追加
-            using(SQLiteConnection con=new SQLiteConnection("Data Source=member.db"))
+            using(SQLiteConnection connection=new SQLiteConnection("Data Source=member.db"))
             {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())
+                connection.Open();
+                using (SQLiteTransaction trans = connection.BeginTransaction())
                 {
-                    SQLiteCommand cmd = con.CreateCommand();
+                    SQLiteCommand command = connection.CreateCommand();
                     //インサート
-                    cmd.CommandText = "INSERT INTO t_product (member_name, member_address, " +
+                    command.CommandText = "INSERT INTO t_product (member_name, member_address, " +
                         "member_phone_number) VALUES (@Name, @Address, @Number)";
                     //パラメータセット
-                    cmd.Parameters.Add("Name", DbType.String);
-                    cmd.Parameters.Add("Address", DbType.String);
-                    cmd.Parameters.Add("Number", DbType.String);
+                    command.Parameters.Add("Name", DbType.String);
+                    command.Parameters.Add("Address", DbType.String);
+                    command.Parameters.Add("Number", DbType.String);
                     //データ追加
-                    cmd.Parameters["Name"].Value = nameBox.Text;
-                    cmd.Parameters["Address"].Value = addressBox.Text;
-                    cmd.Parameters["Number"].Value = numberBox.Text;
-                    cmd.ExecuteNonQuery();
+                    command.Parameters["Name"].Value = nameBox.Text;
+                    command.Parameters["Address"].Value = addressBox.Text;
+                    command.Parameters["Number"].Value = numberBox.Text;
+                    command.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
                 }
@@ -79,21 +79,21 @@ namespace SportsClubSystem
                 con.Open();
                 using (SQLiteTransaction trans = con.BeginTransaction())
                 {
-                    SQLiteCommand cmd = con.CreateCommand();
+                    SQLiteCommand command = con.CreateCommand();
                     //インサート
-                    cmd.CommandText = "UPDATE t_product set member_name = @Name, member_address" +
+                    command.CommandText = "UPDATE t_product set member_name = @Name, member_address" +
                         " = @Address, member_phone_number = @Number WHERE member_id = @Id";
                     //パラメータセット
-                    cmd.Parameters.Add("Name", DbType.String);
-                    cmd.Parameters.Add("Address", DbType.String);
-                    cmd.Parameters.Add("Number", DbType.String);
-                    cmd.Parameters.Add("Id", DbType.Int64);
+                    command.Parameters.Add("Name", DbType.String);
+                    command.Parameters.Add("Address", DbType.String);
+                    command.Parameters.Add("Number", DbType.String);
+                    command.Parameters.Add("Id", DbType.Int64);
                     //データ追加
-                    cmd.Parameters["Name"].Value = nameFixBox.Text;
-                    cmd.Parameters["Address"].Value = addressFixBox.Text;
-                    cmd.Parameters["Number"].Value = numberFixBox.Text;
-                    cmd.Parameters["Id"].Value = int.Parse(seachCdBox.Text);
-                    cmd.ExecuteNonQuery();
+                    command.Parameters["Name"].Value = nameFixBox.Text;
+                    command.Parameters["Address"].Value = addressFixBox.Text;
+                    command.Parameters["Number"].Value = numberFixBox.Text;
+                    command.Parameters["Id"].Value = int.Parse(seachCdBox.Text);
+                    command.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
                 }
@@ -103,19 +103,19 @@ namespace SportsClubSystem
         private void button5_Click(object sender, EventArgs e)
         {
             //データ削除
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+            using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
-                con.Open();
-                using (SQLiteTransaction trans = con.BeginTransaction())    
+                connection.Open();
+                using (SQLiteTransaction trans = connection.BeginTransaction())    
                 {
-                    SQLiteCommand cmd = con.CreateCommand();
+                    SQLiteCommand command = connection.CreateCommand();
                     //インサート
-                    cmd.CommandText = "DELETE FROM t_product WHERE member_id = @Id";
+                    command.CommandText = "DELETE FROM t_product WHERE member_id = @Id";
                     //パラメータセット
-                    cmd.Parameters.Add("Id", DbType.Int64);
+                    command.Parameters.Add("Id", DbType.Int64);
                     //データ削除
-                    cmd.Parameters["Id"].Value = int.Parse(searchCdBox.Text);
-                    cmd.ExecuteNonQuery();
+                    command.Parameters["Id"].Value = int.Parse(searchCdBox.Text);
+                    command.ExecuteNonQuery();
                     //コミット
                     trans.Commit();
                 }
@@ -125,23 +125,23 @@ namespace SportsClubSystem
         private void button6_Click(object sender, EventArgs e)
         {
             //コネクションを開いてテーブル削除して閉じる
-            using (var con = new SQLiteConnection("Data Source=member.db"))
+            using (var connection = new SQLiteConnection("Data Source=member.db"))
             {
-                con.Open();
-                using (SQLiteCommand command = con.CreateCommand())
+                connection.Open();
+                using (SQLiteCommand command = connection.CreateCommand())
                 {
                     command.CommandText =
                         "drop table t_product";
                     command.ExecuteNonQuery();
                 }
-                con.Close();
+                connection.Close();
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
              //データ表示
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=member.db"))
+            using (SQLiteConnection connection = new SQLiteConnection("Data Source=member.db"))
             {
                 //検索番号を格納
                 string serchId = seachBox.Text;
@@ -150,7 +150,7 @@ namespace SportsClubSystem
                     //DataTableを生成
                     var dataTabel = new DataTable();
                     //SQLの実行
-                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", con);
+                    var adapter = new SQLiteDataAdapter("SELECT * FROM t_product", connection);
 
                     adapter.Fill(dataTabel);
                     dataGridViewS.DataSource = dataTabel;
@@ -161,7 +161,7 @@ namespace SportsClubSystem
                     var dataTabel = new DataTable();
                     //会員番号と検索番号が同じ行を表示
                     var adapter = new SQLiteDataAdapter("SELECT * FROM t_product WHERE " +
-                        "t_product.member_id LIKE " + serchId, con);
+                        "t_product.member_id LIKE " + serchId, connection);
 
                     adapter.Fill(dataTabel);
                     dataGridViewS.DataSource = dataTabel;

@@ -71,14 +71,14 @@ namespace SportsClubSystem
                         connection.Open();
                         using (SQLiteTransaction transaction = connection.BeginTransaction())
                         {
-                            SQLiteCommand cmd = connection.CreateCommand();
+                            SQLiteCommand command = connection.CreateCommand();
                             //インサート
-                            cmd.CommandText = "DELETE FROM t_product WHERE member_id = @Id";
+                            command.CommandText = "DELETE FROM t_product WHERE member_id = @Id";
                             //パラメータセット
-                            cmd.Parameters.Add("Id", DbType.Int64);
+                            command.Parameters.Add("Id", DbType.Int64);
                             //データ削除
-                            cmd.Parameters["Id"].Value = int.Parse(deleteBox.Text);
-                            cmd.ExecuteNonQuery();
+                            command.Parameters["Id"].Value = int.Parse(deleteBox.Text);
+                            command.ExecuteNonQuery();
                             //コミット
                             transaction.Commit();
                             DataTable dataTabel = new DataTable();

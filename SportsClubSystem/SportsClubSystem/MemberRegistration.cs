@@ -51,24 +51,24 @@ namespace SportsClubSystem
                             connection.Open();
                             using (SQLiteTransaction transaction = connection.BeginTransaction())
                             {
-                                SQLiteCommand cmd = connection.CreateCommand();
+                                SQLiteCommand command = connection.CreateCommand();
                                 //インサート
-                                cmd.CommandText = "INSERT INTO t_product (member_name, member_address, " +
+                                command.CommandText = "INSERT INTO t_product (member_name, member_address, " +
                                     "member_phone_number) VALUES (@Name, @Address, @Number)";
                                 //パラメータセット
-                                cmd.Parameters.Add("Name", DbType.String);
-                                cmd.Parameters.Add("Address", DbType.String);
-                                cmd.Parameters.Add("Number", DbType.String);
+                                command.Parameters.Add("Name", DbType.String);
+                                command.Parameters.Add("Address", DbType.String);
+                                command.Parameters.Add("Number", DbType.String);
                                 //データ追加
-                                cmd.Parameters["Name"].Value = nameBox.Text;
-                                cmd.Parameters["Address"].Value = addressBox.Text;
-                                cmd.Parameters["Number"].Value = numberBox.Text;
-                                cmd.ExecuteNonQuery();
+                                command.Parameters["Name"].Value = nameBox.Text;
+                                command.Parameters["Address"].Value = addressBox.Text;
+                                command.Parameters["Number"].Value = numberBox.Text;
+                                command.ExecuteNonQuery();
                                 //コミット
                                 transaction.Commit();
                                 //会員番号取得
-                                cmd.CommandText = "SELECT last_insert_rowid()";
-                                SQLiteDataReader reader = cmd.ExecuteReader();
+                                command.CommandText = "SELECT last_insert_rowid()";
+                                SQLiteDataReader reader = command.ExecuteReader();
                                 while (reader.Read())
                                 {
                                     currentId = reader.GetInt32(0);
